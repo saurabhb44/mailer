@@ -1,8 +1,10 @@
 const { sendEmail } = require("./mailer/sendmail");
 var express = require("express");
+var cors = require("cors");
 const bodyParser = require("body-parser");
 var app = express();
 app.use(bodyParser.json());
+app.use(cors());
 
 app.post("/listUsers", function (req, res) {
   var { email, subject, text } = req.body;
