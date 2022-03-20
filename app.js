@@ -23,11 +23,12 @@ app.post("/listUsers", function (req, res) {
   }
 });
 
-var server = app.listen(8081, function () {
+var server = app.listen(process.env.port || 3000, function () {
   var host = server.address().address;
   var port = server.address().port;
   console.log("Example app listening at http://%s:%s", host, port);
 });
+
 
 // var text = "Hello there";
 // var receiverEmail = "2017231@iiitdmj.ac.in";
